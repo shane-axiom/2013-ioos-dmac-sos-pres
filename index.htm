@@ -1,249 +1,610 @@
 <!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
 
-	<head>
-		<meta charset="utf-8">
+        <title>52n IOOS SOS Status - 2013 IOOS DMAC</title>
 
-		<title>52n IOOS SOS Status - 2013 IOOS DMAC</title>
+        <meta name="description" content="Update on 52n IOOS SOS Stauts for the 2013 IOOS DMAC Meeting">
 
-		<meta name="description" content="Update on 52n IOOS SOS Stauts for the 2013 IOOS DMAC Meeting">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.min.css">
+        <link rel="stylesheet" href="bower_components/reveal.js/css/theme/default.css" id="theme">
 
-		<link rel="stylesheet" href="bower_components/reveal.js/css/reveal.min.css">
-		<link rel="stylesheet" href="bower_components/reveal.js/css/theme/default.css" id="theme">
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="bower_components/reveal.js/lib/css/zenburn.css">
 
-		<!-- For syntax highlighting -->
-		<link rel="stylesheet" href="bower_components/reveal.js/lib/css/zenburn.css">
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+            document.write( '<link rel="stylesheet" href="bower_components/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
 
-		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
-		<script>
-			document.write( '<link rel="stylesheet" href="bower_components/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
-		</script>
+        <!--[if lt IE 9]>
+        <script src="bower_components/reveal.js/lib/js/html5shiv.js"></script>
+        <![endif]-->
+        
+        <link rel="stylesheet" href="pres.css">
+    </head>
 
-		<!--[if lt IE 9]>
-		<script src="bower_components/reveal.js/lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <h1>52n IOOS SOS</h1>
+                    <h3>Status Update</h3>
+                    <p>
+                        <small>
+                            For IOOS DMAC Fall 2013<br />
+                            <a href="mailto:shane@axiomalaska.com">Shane StClair</a>, Axiom Alaska</a>
+                        </small>
+                    </p>
+                </section>
+                
+                <section>
+                    <h1>What is SOS?</h1>
+                    <h3>Sensor Observation Service</h3>
+                    <ul>
+                        <li>Store and serve sensor observations and metadata</li>
+                        <li>Open Geospatial Consortium (OGC) Standard</li>
+                    </ul>
+                </section>
 
-	<body>
+                <section>
+                    <h1>52&deg;North SOS</h1>
+                    <h3>Overview</h3>
+                    <ul>
+                        <li>Open source Java SOS implementation</li>
+                        <li>OGC SOS reference implementation</li>
+                        <li>Active development by 52n, other contributors</li>
+                        <li>Working toward SOS 4.0 release (currently beta3-SNAPSHOT)</li>
+                    </ul>
+                </section>
 
-		<div class="reveal">
-			<div class="slides">
-				<section>
-					<h1>52n IOOS SOS</h1>
-					<h3>Status Update</h3>
-					<p>
-            <small>
-               For IOOS DMAC Fall 2013<br />
-               <a href="mailto:shane@axiomalaska.com">Shane StClair</a>, Axiom Alaska</a>
-            </small>
-					</p>
-				</section>
+                <section>
+                    <h1>52&deg;North SOS</h1>
+                    <h3>Dependencies</h3>
+                    <ul>
+                        <li>Maven</li>
+                        <li>Hibernate</li>
+                        <li>xmlbeans</li>
+                        <li>JTS</li>
+                        <li>Joda-Time</li>
+                    </ul>
+                </section>
 
-        <section>
-					<h4>Project Interdependencies</h4>
-          <canvas id="dep_graph_canvas" width="900" height="700" />
-				</section>
+                <section>
+                    <h1>52&deg;North SOS</h1>
+                    <h3>Requirements</h3>
+                    <ul>
+                        <li>Java 1.6+</li>
+                        <li>Applicaton container (Tomcat, Glassfish, etc)</li>
+                        <li>Database (PostgreSQL/PostGIS, Oracle, H2)</li>
+                        <li>Decent hardware (memory/processor/disks)</li>
+                    </ul>
+                </section>
+                
+                <section>
+                    <section>
+                        <h1>52&deg;North SOS</h1>
+                        <h2>Features</h2>
+                    </section>                
+                    <section>
+                        <h1>52&deg;North SOS</h1>
+                        <h3>Admin tools</h3>
+                        <ul>
+                            <li>Install wizard</li>
+                            <li>Admin interface</li>
+                            <li>Test client - static test data example requests</li>
+                            <li>Configuration import/export</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h1>52&deg;North SOS</h1>
+                        <h3>Database Support</h3>
+                        <ul>
+                            <li>PostgreSQL/PostGIS</li>
+                            <li>Oracle</li>
+                            <li>H2 (file)</li>
+                            <li>H2 (memory)</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h1>52&deg;North SOS</h1>
+                        <h3>Dynamic cache</h3>
+                        <ul>
+                            <li>Speeds up requests, especially for large databases</li>
+                            <li>Updated during transactional requests</li>
+                            <li>Serialized to file, preserved over restarts</li>                            
+                        </ul>
+                    </section>
+                    <section>
+                        <h1>52&deg;North SOS</h1>
+                        <h3>Pluggable decoders/encoders</h3>
+                        <ul>
+                            <li>Easy to add new custom formats
+                                <ul>
+                                    <li>CSV</li>
+                                    <li>IOOS m2.0</li>
+                                </ul>
+                            </li>
+                            <li>Support many formats simultaneously</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h1>52&deg;North SOS</h1>
+                        <h3>Filtering</h3>
+                        <div class="flexbox">
+                            <ul>
+                                <li>Spatial
+                                    <ul>
+                                        <li>Overlaps</li>
+                                        <li>Intersects</li>
+                                        <li>Contains</li>
+                                        <li>BBOX</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>Temporal
+                                    <ul>
+                                        <li>before</li>
+                                        <li>after</li>
+                                        <li>during</li>
+                                        <li>Etc</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>Scalar
+                                    <ul>
+                                        <li>equal</li>
+                                        <li>lessThan</li>
+                                        <li>greaterThan</li>
+                                        <li>Etc</li>
+                                    </ul>
+                                </li>
+                            </ul>                            
+                        </div>
+                    </section>
+                    <section>
+                        <h1>52&deg;North SOS</h1>
+                        <h3>Robust SOS 2.0 support</h3>
+                        <ul>
+                            <li>InsertSensor</li>
+                            <li>InsertObservation</li>
+                            <li>GetDataAvailability</li>
+                            <li>UpdateSensorDescription</li>
+                            <li>Result handling</li>
+                            <li>Spatial filtering profile</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h1>52&deg;North SOS</h1>
+                        <h3>Bindings</h3>
+                        <ul>
+                            <li>KVP (GET, key value pair)</li>
+                            <li>POX (POST, plain old XML)</li>
+                            <li>SOAP (POST, SOAP XML)</li>
+                            <li>REST</li>
+                            <li>JSON</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h1>52&deg;North SOS</h1>
+                        <h3>Advanced</h3>
+                        <ul>
+                            <li>Test data insertion</li>
+                            <li>Split data array during InsertObservation</li>
+                            <li>Spatial filtering profile</li>
+                            <li>Related features</li>
+                        </ul>
+                    </section>
+                </section>
 
-				<!-- Example of nested vertical slides -->
-				<section>
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>
-							Slides can be nested inside of other slides,
-							try pressing <a href="#" class="navigate-down">down</a>.
-						</p>
-						<a href="#" class="image navigate-down">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Press down or up to navigate.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>Cornify</p>
-						<a class="test" href="http://cornify.com">
-							<img width="280" height="326" src="https://s3.amazonaws.com/hakim-static/reveal-js/cornify.gif" alt="Unicorn">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 3</h2>
-						<p>That's it, time to go back up.</p>
-						<a href="#/2" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
+                <section>
+                    <section>
+                        <h1>52n IOOS SOS</h1>
+                        <h2>Architecture</h2>
+                        <ul>
+                            <li>Build on upstream 52n SOS modules</li>
+                            <li>Add IOOS customizations
+                                <ul>
+                                    <li>Encoders/Decoders</li>
+                                    <li>IOOS flavor test data</li>
+                                    <li>Custom default settings</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h1>52n IOOS SOS</h1>
+                        <h2>Status</h2>
+                        <ul>
+                            <li>m1.0 template implementation complete
+                                <ul>
+                                  <li>point</li>
+                                  <li>timeSeries</li>
+                                  <li>timeSeriesProfile</li>
+                                </ul>
+                            </li>
+                            <li>Insert and remove IOOS test data through admin interace</li>
+                            <li>IOOS flavor example requests in test client</li>
+                        </ul>
+                    </section>                    
+                </section>
 
-				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? No problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slid.es" target="_blank">http://slid.es</a>.
-					</p>
-				</section>
+                <section>
+                    <section>
+                        <h1>Software Components</h1>
+                        <ul>
+                            <li>Open source</li>
+                            <li>Hosted on GitHub</li>
+                            <li>Reusable</li>
+                            <li>Collaborative</li>
+                        </ul>
+                    </section>
+                    
+                    <section>
+                        <h4>Project Interdependencies</h4>
+                        <canvas id="dep_graph_canvas" width="900" height="700" />
+                    </section>
 
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
+                    <section>
+                        <h1><a href="https://github.com/axiomalaska/cf4j" target="_blank">cf4j</a></h1>
+                        <ul>
+                            <li>Generated cf standard names constants for Java</li>
+                            <li>Version matches CF standard name version</li>
+                        </ul>
+                        <pre><code data-trim contenteditable>                        
+LOGGER.info(CFStandardNames.AIR_PRESSURE.getName() + ' has units ' + 
+    CFStandardNames.AIR_PRESSURE.getCanonicalUnits());
+                        </code></pre>
+                    </section>
 
-				<section>
-					<h2>Works in Mobile Safari</h2>
-					<p>
-						Try it out! You can swipe through the slides and pinch your way to the overview.
-					</p>
-				</section>
+                    <section>
+                        <h1><a href="https://github.com/axiomalaska/phenomena" target="_blank">phenomena</a></h1>
+                        <ul>
+                            <li>Standardized phenomenon/observed property library</li>
+                            <li>Multiple sources
+                                <ul>
+                                    <li>CF standard names</li>
+                                    <li>IOOS MMI parameters</li>
+                                    <li>Fake (limbo until added to IOOS MMI or CF)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <pre><code data-trim contenteditable>
+Unit farenheitUnit = UnitResolver.instance().resolveUnit("degF");
+int farenheitValue = Phenomena.instance().AIR_TEMPERATURE.getUnit()
+    .convertTo(16.5, farenheitUnit);
+                        </code></pre>
+                    </section>
 
-				<section>
-					<h2>Marvelous Unordered List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
+                    <section>
+                        <h1><a href="https://github.com/axiomalaska/ioos-sos-common" target="_blank">ioos-sos-common</a></h1>
+                        <ul>
+                            <li>Shared constants</li>
+                            <li>Helper classes</li>
+                        </ul>
+                        <pre><code data-trim contenteditable>
+platformTypeNode.setDefinition(IoosDefConstants.PLATFORM_TYPE_DEF);
+                        
+Point point = GeomHelper.createLatLngPoint(60.2, -140.1);
+Point pointWithZ = GeomHelper.createLatLngPoint(60.2, -140.1, -10.3);
+assertTrue(GeomHelper.equal2d(point, pointWithZ));
+                        </code></pre>
+                    </section>                    
+                    
+                    <section>
+                        <h1><a href="https://github.com/axiomalaska/sos-injector" target="_blank">sos-injector</a></h1>
+                        <ul>
+                            <li>API for injecting observations into 52n IOOS SOS</li>
+                            <li>See also: <a href="https://github.com/axiomalaska/sos-injector-example">sos-injector-example</a></li>
+                        </ul>
+                        <pre><code data-trim contenteditable>
+PublisherInfo publisherInfo = new PublisherInfo();
+publisherInfo.setCode("example");
+publisherInfo.setName("Example publisher");
+...
+        
+SosInjector sosInjector = new SosInjector("Example SOS Injector",
+    sosUrl, authorizationToken, publisherInfo,
+    new ExampleStationRetriever(),
+    new ExampleObservationRetriever(), null );
 
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
+sosInjector.update();    
+                        </code></pre>
+                    </section>                    
+                    
+                    <section>
+                        <h1><a href="https://github.com/axiomalaska/sensor-web-harvester" target="_blank">sensor-web-harvester</a></h1>
+                        <ul>
+                            <li>Command line application</li>
+                            <li>Harvests web available sensor data</li>
+                            <li>Inserts to 52n IOOS SOS (using sos-injector)</li>
+                            <li>Low setup overhead
+                                <ul>
+                                    <li>One small config file</li>
+                                    <li>No database setup needed (uses H2)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>                    
 
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
+                    <section>
+                        <h1><a href="https://github.com/axiomalaska/sensor-web-harvester" target="_blank">sensor-web-harvester</a></h1>
+                        <h3>Many national sources out of the box</h3>
+                        <div class="flexbox">
+                            <ul>
+                                <li>HADS</li>
+                                <li>NDBC</li>
+                                <li>CO-OPS</li>
+                            </ul>
+                            <ul>
+                                <li>NOAA Weather</li>
+                                <li>RAWS</li>
+                                <li>SnoTel</li>
+                            </ul>
+                            <ul>
+                                <li>USGS Water</li>
+                                <li>NERRS</li>
+                                <li>STORET</li>
+                            </ul>
+                        </div>
+                    </section>                  
+                    
+                    <section>
+                        <h1><a href="https://github.com/axiomalaska/ioos-sos-validator" target="_blank">ioos-sos-validator</a></h1>
+                        <ul>
+                            <li>Validation library for IOOS SOS servers/documents</li>
+                            <li>Flexible
+                                <ul>
+                                    <li>Run during builds (jUnit suites)</li>
+                                    <li>Run on command line
+                                        <ul>
+                                            <li>Against live SOS server</li>
+                                            <li>Against static XML files</li>
+                                            <li>Against IOOS templates on Google Code</li>
+                                        </ul>
+                                    </li>
+                                    <li>TODO: webapp</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>                    
+                </section>
 
-						For those of you who like that sort of thing. Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
+                <section>
+                    <h1>Next Steps</h1>
+                    <ul>
+                        <li>ioos-sos-validator
+                            <ul>
+                                <li>Add tests</li>
+                                <li>Web interface</li>                                
+                                <li>Write docs</li>
+                             </ul>
+                        </li>
+                        <li>52n IOOS SOS
+                            <ul>
+                                <li>Export to NODC CF 1.6 netCDF (archive to ncSOS)</li>
+                                <li>Implement quality flag support</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                
+                <section>
+                    <h1>SOS 2.0</h1>
+                    <ul>
+                        <li>Spatial Filtering Profile (samplingGeometry)
+                            <ul>
+                                <li>All observations contain a samplingGeometry</li>
+                                <li>Spatially filter observations on foi or samplingGeometry</li>
+                                <li>Solves problem of how to handle mobile sensors</li>
+                             </ul>
+                        </li>
+                    </ul>
+                </section>
+                
+                <!-- Example of nested vertical slides -->
+                <section>
+                    <section>
+                        <h2>Vertical Slides</h2>
+                        <p>
+                            Slides can be nested inside of other slides,
+                            try pressing <a href="#" class="navigate-down">down</a>.
+                        </p>
+                        <a href="#" class="image navigate-down">
+                            <img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+                        </a>
+                    </section>
+                    <section>
+                        <h2>Basement Level 1</h2>
+                        <p>Press down or up to navigate.</p>
+                    </section>
+                    <section>
+                        <h2>Basement Level 2</h2>
+                        <p>Cornify</p>
+                        <a class="test" href="http://cornify.com">
+                            <img width="280" height="326" src="https://s3.amazonaws.com/hakim-static/reveal-js/cornify.gif" alt="Unicorn">
+                        </a>
+                    </section>
+                    <section>
+                        <h2>Basement Level 3</h2>
+                        <p>That's it, time to go back up.</p>
+                        <a href="#/2" class="image">
+                            <img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
+                        </a>
+                    </section>
+                </section>
 
-						```
-						<section data-markdown>
-						  ## Markdown support
+                <section>
+                    <h2>Slides</h2>
+                    <p>
+                        Not a coder? No problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slid.es" target="_blank">http://slid.es</a>.
+                    </p>
+                </section>
 
-						  For those of you who like that sort of thing.
-						  Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
+                <section>
+                    <h2>Point of View</h2>
+                    <p>
+                        Press <strong>ESC</strong> to enter the slide overview.
+                    </p>
+                    <p>
+                        Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
+                    </p>
+                </section>
 
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=cube#/transitions">Cube</a> -
-						<a href="?transition=page#/transitions">Page</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a> -
-						<a href="?transition=linear#/transitions">Linear</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?#/transitions">Default</a>
-					</p>
-				</section>
+                <section>
+                    <h2>Works in Mobile Safari</h2>
+                    <p>
+                        Try it out! You can swipe through the slides and pinch your way to the overview.
+                    </p>
+                </section>
 
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						Reveal.js comes with a few themes built in: <br>
-						<a href="?theme=sky#/themes">Sky</a> -
-						<a href="?theme=beige#/themes">Beige</a> -
-						<a href="?theme=simple#/themes">Simple</a> -
-						<a href="?theme=serif#/themes">Serif</a> -
-						<a href="?theme=night#/themes">Night</a> -
-						<a href="?#/themes">Default</a>
-					</p>
-					<p>
-						<small>
-							* Theme demos are loaded after the presentation which leads to flicker. In production you should load your theme in the <code>&lt;head&gt;</code> using a <code>&lt;link&gt;</code>.
-						</small>
-					</p>
-				</section>
+                <section>
+                    <h2>Marvelous Unordered List</h2>
+                    <ul>
+                        <li>No order here</li>
+                        <li>Or here</li>
+                        <li>Or here</li>
+                        <li>Or here</li>
+                    </ul>
+                </section>
 
-				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the background.
-					</p>
-				</section>
+                <section>
+                    <h2>Fantastic Ordered List</h2>
+                    <ol>
+                        <li>One is smaller than...</li>
+                        <li>Two is smaller than...</li>
+                        <li>Three!</li>
+                    </ol>
+                </section>
 
-				<section data-state="customevent">
-					<h2>Custom Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+                <section data-markdown>
+                    <script type="text/template">
+                        ## Markdown support
+
+                        For those of you who like that sort of thing. Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
+
+                        ```
+                        <section data-markdown>
+                          ## Markdown support
+
+                          For those of you who like that sort of thing.
+                          Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
+                        </section>
+                        ```
+                    </script>
+                </section>
+
+                <section id="transitions">
+                    <h2>Transition Styles</h2>
+                    <p>
+                        You can select from different transitions, like: <br>
+                        <a href="?transition=cube#/transitions">Cube</a> -
+                        <a href="?transition=page#/transitions">Page</a> -
+                        <a href="?transition=concave#/transitions">Concave</a> -
+                        <a href="?transition=zoom#/transitions">Zoom</a> -
+                        <a href="?transition=linear#/transitions">Linear</a> -
+                        <a href="?transition=fade#/transitions">Fade</a> -
+                        <a href="?transition=none#/transitions">None</a> -
+                        <a href="?#/transitions">Default</a>
+                    </p>
+                </section>
+
+                <section id="themes">
+                    <h2>Themes</h2>
+                    <p>
+                        Reveal.js comes with a few themes built in: <br>
+                        <a href="?theme=sky#/themes">Sky</a> -
+                        <a href="?theme=beige#/themes">Beige</a> -
+                        <a href="?theme=simple#/themes">Simple</a> -
+                        <a href="?theme=serif#/themes">Serif</a> -
+                        <a href="?theme=night#/themes">Night</a> -
+                        <a href="?#/themes">Default</a>
+                    </p>
+                    <p>
+                        <small>
+                            * Theme demos are loaded after the presentation which leads to flicker. In production you should load your theme in the <code>&lt;head&gt;</code> using a <code>&lt;link&gt;</code>.
+                        </small>
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Global State</h2>
+                    <p>
+                        Set <code>data-state="something"</code> on a slide and <code>"something"</code>
+                        will be added as a class to the document element when the slide is open. This lets you
+                        apply broader style changes, like switching the background.
+                    </p>
+                </section>
+
+                <section data-state="customevent">
+                    <h2>Custom Events</h2>
+                    <p>
+                        Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
+                    </p>
+                    <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
 Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
+    console.log( '"customevent" has fired' );
 } );
-					</code></pre>
-				</section>
+                    </code></pre>
+                </section>
 
-				<section>
-					<section data-background="#007777">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#007777"</code> on a slide to change the full page background to the given color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="image navigate-down">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code>&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Repeated Image Backgrounds</h2>
-						<pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-				</section>
+                <section>
+                    <section data-background="#007777">
+                        <h2>Slide Backgrounds</h2>
+                        <p>
+                            Set <code>data-background="#007777"</code> on a slide to change the full page background to the given color. All CSS color formats are supported.
+                        </p>
+                        <a href="#" class="image navigate-down">
+                            <img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+                        </a>
+                    </section>
+                    <section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png">
+                        <h2>Image Backgrounds</h2>
+                        <pre><code>&lt;section data-background="image.png"&gt;</code></pre>
+                    </section>
+                    <section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" data-background-repeat="repeat" data-background-size="100px">
+                        <h2>Repeated Image Backgrounds</h2>
+                        <pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
+                    </section>
+                </section>
 
-				<section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
-					<h2>Background Transitions</h2>
-					<p>
-						Pass reveal.js the <code>backgroundTransition: 'slide'</code> config argument to make backgrounds slide rather than fade.
-					</p>
-				</section>
+                <section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
+                    <h2>Background Transitions</h2>
+                    <p>
+                        Pass reveal.js the <code>backgroundTransition: 'slide'</code> config argument to make backgrounds slide rather than fade.
+                    </p>
+                </section>
 
-				<section data-transition="linear" data-background="#8c4738" data-background-transition="slide">
-					<h2>Background Transition Override</h2>
-					<p>
-						You can override background transitions per slide by using <code>data-background-transition="slide"</code>.
-					</p>
-				</section>
+                <section data-transition="linear" data-background="#8c4738" data-background-transition="slide">
+                    <h2>Background Transition Override</h2>
+                    <p>
+                        You can override background transitions per slide by using <code>data-background-transition="slide"</code>.
+                    </p>
+                </section>
 
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
+                <section>
+                    <h2>Clever Quotes</h2>
+                    <p>
+                        These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
+                        &ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
+                    </p>
+                    <blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
+                        &ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
+                        reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
+                    </blockquote>
+                </section>
 
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code data-trim contenteditable>
+                <section>
+                    <h2>Pretty Code</h2>
+                    <pre><code data-trim contenteditable>
 function linkify( selector ) {
   if( supports3DTransforms ) {
 
@@ -258,117 +619,117 @@ function linkify( selector ) {
     };
   }
 }
-					</code></pre>
-					<p>Courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
+                    </code></pre>
+                    <p>Courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
+                </section>
 
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
+                <section>
+                    <h2>Intergalactic Interconnections</h2>
+                    <p>
+                        You can link between slides internally,
+                        <a href="#/2/3">like this</a>.
+                    </p>
+                </section>
 
-				<section>
-					<section>
-						<h2>Fragmented Views</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<ol>
-							<li class="fragment"><code>any type</code></li>
-							<li class="fragment"><em>of view</em></li>
-							<li class="fragment"><strong>fragments</strong></li>
-						</ol>
+                <section>
+                    <section>
+                        <h2>Fragmented Views</h2>
+                        <p>Hit the next arrow...</p>
+                        <p class="fragment">... to step through ...</p>
+                        <ol>
+                            <li class="fragment"><code>any type</code></li>
+                            <li class="fragment"><em>of view</em></li>
+                            <li class="fragment"><strong>fragments</strong></li>
+                        </ol>
 
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's a few styles of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment roll-in">roll-in</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-green">highlight-green</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
-					</section>
-				</section>
+                        <aside class="notes">
+                            This slide has fragments which are also stepped through in the notes window.
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>Fragment Styles</h2>
+                        <p>There's a few styles of fragments, like:</p>
+                        <p class="fragment grow">grow</p>
+                        <p class="fragment shrink">shrink</p>
+                        <p class="fragment roll-in">roll-in</p>
+                        <p class="fragment fade-out">fade-out</p>
+                        <p class="fragment highlight-red">highlight-red</p>
+                        <p class="fragment highlight-green">highlight-green</p>
+                        <p class="fragment highlight-blue">highlight-blue</p>
+                    </section>
+                </section>
 
-				<section>
-					<h2>Spectacular image!</h2>
-					<a class="image" href="http://lab.hakim.se/meny/" target="_blank">
-						<img width="320" height="299" src="http://s3.amazonaws.com/hakim-static/portfolio/images/meny.png" alt="Meny">
-					</a>
-				</section>
+                <section>
+                    <h2>Spectacular image!</h2>
+                    <a class="image" href="http://lab.hakim.se/meny/" target="_blank">
+                        <img width="320" height="299" src="http://s3.amazonaws.com/hakim-static/portfolio/images/meny.png" alt="Meny">
+                    </a>
+                </section>
 
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, below is an example that's been uploaded to SlideShare.</p>
-					<iframe id="slideshare" src="http://www.slideshare.net/slideshow/embed_code/13872948" width="455" height="356" style="margin:0;overflow:hidden;border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen> </iframe>
-					<script>
-						document.getElementById('slideshare').attributeName = 'allowfullscreen';
-					</script>
-				</section>
+                <section>
+                    <h2>Export to PDF</h2>
+                    <p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, below is an example that's been uploaded to SlideShare.</p>
+                    <iframe id="slideshare" src="http://www.slideshare.net/slideshow/embed_code/13872948" width="455" height="356" style="margin:0;overflow:hidden;border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen> </iframe>
+                    <script>
+                        document.getElementById('slideshare').attributeName = 'allowfullscreen';
+                    </script>
+                </section>
 
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press b or period on your keyboard to enter the 'paused' mode. This mode is helpful when you want to take distracting slides off the screen
-						during a presentation.
-					</p>
-				</section>
+                <section>
+                    <h2>Take a Moment</h2>
+                    <p>
+                        Press b or period on your keyboard to enter the 'paused' mode. This mode is helpful when you want to take distracting slides off the screen
+                        during a presentation.
+                    </p>
+                </section>
 
-				<section>
-					<h2>Stellar Links</h2>
-					<ul>
-						<li><a href="http://slid.es">Try the online editor</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js">Source code on GitHub</a></li>
-						<li><a href="http://twitter.com/hakimel">Follow me on Twitter</a></li>
-					</ul>
-				</section>
+                <section>
+                    <h2>Stellar Links</h2>
+                    <ul>
+                        <li><a href="http://slid.es">Try the online editor</a></li>
+                        <li><a href="https://github.com/hakimel/reveal.js">Source code on GitHub</a></li>
+                        <li><a href="http://twitter.com/hakimel">Follow me on Twitter</a></li>
+                    </ul>
+                </section>
 
-				<section>
-					<h1>THE END</h1>
-					<h3>BY Hakim El Hattab / hakim.se</h3>
-				</section>
+                <section>
+                    <h1>THE END</h1>
+                    <h3>BY Hakim El Hattab / hakim.se</h3>
+                </section>
 
-			</div>
+            </div>
 
-		</div>
+        </div>
 
-		<script src="bower_components/reveal.js/lib/js/head.min.js"></script>
-		<script src="bower_components/reveal.js/js/reveal.min.js"></script>
+        <script src="bower_components/reveal.js/lib/js/head.min.js"></script>
+        <script src="bower_components/reveal.js/js/reveal.min.js"></script>
 
-		<script>
+        <script>
 
-			// Full list of configuration options available here:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
 
-				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
-				// Optional libraries used to extend on reveal.js
-				dependencies: [
-					{ src: 'bower_components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'bower_components/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'bower_components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'bower_components/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'bower_components/jquery/jquery.min.js'},
-					{ src: 'bower_components/springy/springy.js'},
-					{ src: 'bower_components/springy/springyui.js'}
-				]
-			});
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'bower_components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'bower_components/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'bower_components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'bower_components/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'bower_components/jquery/jquery.min.js'},
+                    { src: 'bower_components/springy/springy.js'},
+                    { src: 'bower_components/springy/springyui.js'}
+                ]
+            });
 
       Reveal.addEventListener( 'ready', function( event ){
         var depGraph = new Springy.Graph();
@@ -395,7 +756,7 @@ function linkify( selector ) {
 
         $('#dep_graph_canvas').springy({ graph: depGraph });
       });
-		</script>
+        </script>
 
-	</body>
+    </body>
 </html>
