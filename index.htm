@@ -340,19 +340,19 @@ sosInjector.update();
                         <h3>Many national sources out of the box</h3>
                         <div class="flexbox">
                             <ul>
-                                <li>HADS</li>
-                                <li>NDBC</li>
-                                <li>CO-OPS</li>
+                                <li class="fragment">HADS</li>
+                                <li class="fragment">NDBC</li>
+                                <li class="fragment">CO-OPS</li>
                             </ul>
                             <ul>
-                                <li>NOAA Weather</li>
-                                <li>RAWS</li>
-                                <li>SnoTel</li>
+                                <li class="fragment">NOAA Weather</li>
+                                <li class="fragment">RAWS</li>
+                                <li class="fragment">SnoTel</li>
                             </ul>
                             <ul>
-                                <li>USGS Water</li>
-                                <li>NERRS</li>
-                                <li>STORET</li>
+                                <li class="fragment">USGS Water</li>
+                                <li class="fragment">NERRS</li>
+                                <li class="fragment">STORET</li>
                             </ul>
                         </div>
                     </section>                  
@@ -410,8 +410,58 @@ sosInjector.update();
                     </ul>
                 </section>
 
-            </div>
+                <section>
+                    <a href="svg/sos_flow.svg" target="_blank">
+                        <h2>SOS Data Flow</h2>
+                    </a>                
+                    <embed src="svg/sos_flow.svg" type="image/svg+xml" />
+                </section>
 
+                <section>
+                    <a href="svg/01_52n_input.svg" target="_blank">
+                        <h2>52n Input</h2>
+                    </a>
+                    <embed src="svg/01_52n_input.svg" type="image/svg+xml" />
+                </section>
+
+                <section>
+                    <a href="svg/02_ncSOS_io.svg" target="_blank">
+                      <h2>ncSOS Input/Output</h2>
+                    </a>                                   
+                    <embed src="svg/02_ncSOS_io.svg" type="image/svg+xml" height="600px" />                    
+                </section>                
+
+                <section>
+                    <a href="svg/03_archive_qaqc.svg" target="_blank">
+                      <h2>Archive, QA/QC</h2>
+                    </a>                                   
+                    <embed src="svg/03_archive_qaqc.svg" type="image/svg+xml" />
+                </section>                
+
+                <section>
+                    <a href="svg/04_data_access.svg" target="_blank">
+                      <h2>Data Access</h2>
+                    </a>                                   
+                    <embed src="svg/04_data_access.svg" type="image/svg+xml" />
+                </section>                
+                
+                <section>
+                    <a href="svg/sos_flow.svg" target="_blank">
+                        <h2>SOS Data Flow</h2>
+                    </a>                
+                    <embed src="svg/sos_flow.svg" type="image/svg+xml" />
+                </section>                
+
+                <section>
+                    <h1>Why use SOS?</h1>
+                    <ul>
+                        <li>Central storage/access for sensor data</li>
+                        <li>Verify and error check data in one place</li>
+                        <li>Leverage community tools (QA/QC, harvesters, clients</li>
+                        <li>Automate IOOS asset inventory</li>
+                    </ul>
+                </section>
+            </div>
         </div>
 
         <script src="bower_components/reveal.js/lib/js/head.min.js"></script>
